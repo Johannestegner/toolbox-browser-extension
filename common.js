@@ -68,7 +68,7 @@ export const supportedTools = {
   goland: {
     name: 'GoLand',
     tag: 'goland',
-    icon: chrome.extension.getURL(require('@jetbrains/logos/gogland/gogland.svg'))
+    icon: chrome.extension.getURL(require('@jetbrains/logos/goland/goland.svg'))
   }
 };
 
