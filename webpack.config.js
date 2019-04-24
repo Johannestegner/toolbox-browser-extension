@@ -1,6 +1,5 @@
 /* eslint-env node */
 /* eslint-disable import/no-commonjs */
-
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const LicenseChecker = require('@jetbrains/ring-ui-license-checker');
@@ -39,7 +38,7 @@ module.exports = {
 
     new CopyWebpackPlugin([
       {from: 'manifest.json'},
-      {from: 'icon-128.png'} // Replace with logo from package after it's generation
+      {from: 'icon-128.png'} // Replace with logo from package after it's generated
     ]),
     new LicenseChecker({
       format: params => params.modules.map(mod => `${mod.name}@${mod.version} (${mod.url})${mod.license.name} (${mod.license.url})`).join('\n\n'),
