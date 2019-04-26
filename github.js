@@ -9,6 +9,7 @@ import {
   USAGE_THRESHOLD
 } from './common';
 
+
 const appendNode = document.getElementsByClassName('file-navigation')[0];
 const githubInfo = gh(window.location.toString());
 

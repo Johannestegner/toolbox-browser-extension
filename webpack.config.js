@@ -9,8 +9,7 @@ module.exports = {
   target: 'web',
   entry: {
     github: './github',
-    gitlab: './gitlab',
-    common: ['./common'] // https://github.com/webpack/webpack/issues/300
+    gitlab: './gitlab'
   },
   output: {
     filename: 'jetbrains-toolbox-[name].js',
@@ -28,14 +27,7 @@ module.exports = {
       }
     ]
   },
-  optimization: {
-    splitChunks: {
-      name: 'common',
-      minChunks: 2
-    }
-  },
   plugins: [
-
     new CopyWebpackPlugin([
       {from: 'manifest.json'},
       {from: 'icon-128.png'} // Replace with logo from package after it's generated
@@ -43,7 +35,7 @@ module.exports = {
     new LicenseChecker({
       format: params => params.modules.map(mod => `${mod.name}@${mod.version} (${mod.url})${mod.license.name} (${mod.license.url})`).join('\n\n'),
       filename: 'third-party-licences.txt',
-      exclude: /@jetbrains\/logos/
+      exclude: /@jetbrains/
     })
   ]
 };

@@ -75,4 +75,3 @@ if (node && regex.test(window.location.href)) {
       then(tools => renderButtons(tools, meta))).
     catch(() => { /*Do nothing.*/ });
 }
-
